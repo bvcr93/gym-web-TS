@@ -6,21 +6,21 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import ActionButton from "./ActionButton";
+import { useAppContext } from "../context/AppContext";
+import CloseIcon from '@mui/icons-material/Close';
 
-type Props = {
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
-};
 
-const Nav = ({ selectedPage, setSelectedPage }: Props) => {
+
+const Nav = () => {
+  const {selectedPage, setSelectedPage, isTopOfPage} = useAppContext()
 
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [nav, setNav] = useState(false);
-  
+  const navBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow"
   return (
     <nav>
-      <div className=" w-full py-6 flex items-center justify-between fixed top-0 z-30">
-        <div className="flex items-center justify-between mx-auto w-5/6 ">
+      <div className={` ${navBackground} w-full py-6 flex items-center justify-between fixed top-0 z-30`}>
+        <div className={` flex items-center justify-between mx-auto w-5/6 `}>
           <div className="flex items-center justify-between w-full gap-16">
             <img src={logo} alt="" />
             {isAboveMediumScreens ? (
@@ -53,6 +53,28 @@ const Nav = ({ selectedPage, setSelectedPage }: Props) => {
           </div>
         </div>
       </div>
+      {/* MOBILE MENU MODAL */} 
+      {!isAboveMediumScreens && nav && (
+        <div className="fixed  right-0 bottom-0 z-40 h-full  w-[300px] bg-primary-100 drop-shadow-xl">
+            {/* CLOSE ICON  */}
+            <div className="flex justify-end px-12 py-8 " onClick={() => setNav(!nav)}>
+            <CloseIcon sx= {{fontSize:"25px"}} className= "cursor-pointer"/>
+
+            </div>
+            <div className="flex flex-col ml-[33%] space-y-8 text-xl  ">
+            {links.map((link) => (
+                    <Link
+                      key={link.page}
+                      page={link.page}
+                      selectedPage={selectedPage}
+                      setSelectedPage={setSelectedPage}
+                    >
+                      {link.page}
+                    </Link>
+                  ))}
+            </div>
+        </div>
+      )}
     </nav>
   );
 };
