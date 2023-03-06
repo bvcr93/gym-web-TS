@@ -1,7 +1,6 @@
 import Link from "./Link";
 import logo from "../assets/logo.png";
 import { links } from "../types/types";
-import { SelectedPage } from "../types/enums";
 import useMediaQuery from "../hooks/useMediaQuery";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
@@ -56,7 +55,7 @@ const Nav = () => {
       {/* MOBILE MENU MODAL */} 
       {!isAboveMediumScreens && nav && (
         <div className="fixed  right-0 bottom-0 z-40 h-full  w-[300px] bg-primary-100 drop-shadow-xl">
-            {/* CLOSE ICON  */}
+        
             <div className="flex justify-end px-12 py-8 " onClick={() => setNav(!nav)}>
             <CloseIcon sx= {{fontSize:"25px"}} className= "cursor-pointer"/>
 

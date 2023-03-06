@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SelectedPage } from "../types/enums";
 
@@ -14,7 +14,7 @@ const ActionButton = ({ children, setSelectedPage }: Props) => {
     px-10 py-2 hover:bg-primary-500
      hover:text-white hover:transition duration-200"
       onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-      href= {`#${SelectedPage.ContactUs}`}
+      href={`#${SelectedPage.ContactUs}`}
     >
       {children}
     </AnchorLink>
