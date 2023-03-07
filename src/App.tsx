@@ -1,6 +1,7 @@
 import Benefits from "./components/Benefits";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
+import OurClasses from "./components/OurClasses";
 import { AppProvider } from "./context/AppContext";
 
 
@@ -13,6 +14,7 @@ function App() {
       <Nav />
       <Home/>
       <Benefits/>
+      <OurClasses/>
     </div>
     </AppProvider>
   );
