@@ -1,13 +1,16 @@
 import Home from "./components/Home";
 import Nav from "./components/Nav";
+import { AppProvider } from "./context/AppContext";
 
 
 function App() {
   return (
-    <div className="app bg-gray-20">
+    <AppProvider>
+    <div className="app">
       <Nav />
       <Home/>
     </div>
+    </AppProvider>
   );
 }
 
