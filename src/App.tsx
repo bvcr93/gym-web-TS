@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import OurClasses from "./pages/OurClasses";
 import { AppProvider } from "./context/AppContext";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Benefits />
         <OurClasses />
         <ContactUs />
+        <Footer/>
       </div>
     </AppProvider>
   );

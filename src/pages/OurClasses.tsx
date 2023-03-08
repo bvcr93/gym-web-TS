@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppContext } from "../context/AppContext";
 import { motion } from "framer-motion";
 import { SelectedPage } from "../types/enums";
@@ -48,4 +47,3 @@ const OurClasses = (props: Props) => {
 };
 
 export default OurClasses;
-
