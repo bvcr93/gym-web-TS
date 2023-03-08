@@ -1,5 +1,5 @@
 import { useAppContext } from "../context/AppContext";
-import ActionButton from "./ActionButton";
+import ActionButton from "../components/ActionButton";
 import HomePageText from "../assets/HomePageText.png";
 import grafic from "../assets/graphic.png";
 import redbull from "../assets/redbull.png";
@@ -8,7 +8,7 @@ import forbes from "../assets/forbes.png";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SelectedPage } from "../types/enums";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 type Props = {};
 
 const Home = (props: Props) => {
@@ -18,23 +18,23 @@ const Home = (props: Props) => {
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       {/* IMAGE AND MAIN HEADER */}
 
-      <motion.div 
-      onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
-      className="md:flex mx-auto w-5/6 items-center justify-center md:h-5/6">
+      <motion.div
+        onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+        className="md:flex mx-auto w-5/6 items-center justify-center md:h-5/6">
         {/* main header */}
         <div className="z-10 mt-32 md:basis-3/5">
           {/* headings */}
-          <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{once: true, amount: 0.5}}
-          transition= {{duration: 1}}
-          variants= {{
-            hidden: {opacity: 0, x:-50},
-            visible:{opacity:1, x:0}
-          }}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 }
+            }}
 
-          className="md:-mt-20">
+            className="md:-mt-20">
             <div className="relative">
               <div className="before:absolute before:-top-20 md:before:content-evolvetext before:-left-20 before:z-[-1] ">
                 <img src={HomePageText} alt="" />
@@ -47,16 +47,16 @@ const Home = (props: Props) => {
             </p>
           </motion.div>
           {/* actions */}
-          <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{once: true, amount: 0.5}}
-          transition= {{duration: 1, delay: 0.2}}
-          variants= {{
-            hidden: {opacity: 0, x:-50},
-            visible:{opacity:1, x:0}
-          }}
-          className="mt-8 flex items-center gap-8 md:justify-start">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            className="mt-8 flex items-center gap-8 md:justify-start">
             <ActionButton setSelectedPage={setSelectedPage}>
               Join now
             </ActionButton>

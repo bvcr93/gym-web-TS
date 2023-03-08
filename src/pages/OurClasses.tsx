@@ -2,8 +2,8 @@ import React from "react";
 import { useAppContext } from "../context/AppContext";
 import { motion } from "framer-motion";
 import { SelectedPage } from "../types/enums";
-import HText from "./HText";
-import Class from "./Class";
+import HText from "../components/HText";
+import Class from "../components/Class";
 import { classes } from "../types/classTypes";
 
 type Props = {};

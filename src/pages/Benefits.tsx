@@ -1,11 +1,11 @@
 import { useAppContext } from "../context/AppContext";
 import { motion } from "framer-motion";
 import { SelectedPage } from "../types/enums";
-import HText from "./HText";
-import Benefit from "./Benefit";
+import HText from "../components/HText";
+import Benefit from "../components/Benefit";
 import { benefits } from "../types/benefitsTypes";
 import { BenefitType } from "../types/benefitsTypes";
-import ActionButton from "./ActionButton";
+import ActionButton from "../components/ActionButton";
 import benefitsImg from "../assets/BenefitsPageGraphic.png"
 
 const Benefits = () => {
